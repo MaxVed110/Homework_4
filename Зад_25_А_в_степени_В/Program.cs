@@ -3,17 +3,16 @@
 3, 5 -> 243 (3⁵)
 */
 
-double NumberPow(int numberA, int numberB)
+double NumberPow(double[] array)
 {
-   double result = Math.Pow(numberA, numberB);
+   double result = Math.Pow(array[0], array[1]);
    return result;
 }
 
-Console.WriteLine("Введите 2 числа: ");
+Console.WriteLine("Введите 2 числа через пробел: ");
 
-int FirstNumber = Convert.ToInt32(Console.ReadLine());
-int TwoNumber = Convert.ToInt32(Console.ReadLine());
+double[] TwoNumber = Console.ReadLine()!.Split(' ').Select(x => Convert.ToDouble(x)).ToArray();
 
-double resultPow =  NumberPow(FirstNumber, TwoNumber);
+double resultPow =  NumberPow(TwoNumber);
 
-Console.WriteLine($"Число {FirstNumber} в степени {TwoNumber}  = {resultPow}");
+Console.WriteLine($"Число {TwoNumber[0]} в степени {TwoNumber[1]}  = {resultPow}");
